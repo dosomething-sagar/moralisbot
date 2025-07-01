@@ -145,5 +145,8 @@ def fetch_and_notify():
 
 # === Run every 20 seconds ===
 if __name__ == "__main__":
-    fetch_and_notify()
+    start_time = time.time()
+    while time.time() - start_time < 300:  # 300 seconds = 5 minutes
+        fetch_and_notify()
+        time.sleep(30)
 
